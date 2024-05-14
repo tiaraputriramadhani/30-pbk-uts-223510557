@@ -38,6 +38,8 @@ body {
 }
 
 .cont {
+	position: relative;
+	top:15vh;
 	background-color: rgb(245, 245, 245);
 	width: 70%;
   margin-left: 200px;
@@ -257,3 +259,4 @@ input:checked ~ .bubble::after {
 	text-decoration: line-through;
 	color: var(--grey);
 }
+
