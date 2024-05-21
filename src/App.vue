@@ -59,4 +59,5 @@ const showPosts = () => {
 h1 {
   text-align: center;
 }
+
 </style>
