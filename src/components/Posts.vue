@@ -69,7 +69,4 @@ const props = defineProps({
   }, { immediate: true });
   </script>
   
-  <style scoped>
-  /* Styles for Posts.vue */
-  </style>
   

@@ -134,7 +134,4 @@
   )
   </script>
   
-  <style scoped>
-  /* Styles for Todos.vue */
-  </style>
   
