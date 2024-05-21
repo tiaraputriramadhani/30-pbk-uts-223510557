@@ -16,6 +16,14 @@
   
   <script setup>
   import { ref, onMounted, watch } from 'vue'
+
+  import { defineProps, defineEmits } from 'vue';
+const props = defineProps({
+  initialTodos: {
+    type: Array,
+    default: () => [],
+  }
+});
   
   const selectedUser = ref(null);
   const isLoading = ref(false);

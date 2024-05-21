@@ -1,3 +1,5 @@
+<!-- App.vue -->
+
 <template>
   <header class="header">
     <nav class="navbar">
@@ -6,17 +8,38 @@
     </nav>
   </header>
   <div class="cont">
-    <Todos v-if="showingTodos" />
-    <Posts v-else />
+    <Todos v-if="showingTodos" :initialTodos="todos" @update:todos="todos = $event">
+      <template #todo-item="{ todo }">
+        <label>
+          <input type="checkbox" v-model="todo.done" />
+          <span :class="['bubble', todo.category === 'malam' ? 'malam' : 'siang']"></span>
+        </label>
+        <div class="todo-content">
+          <input type="text" v-model="todo.content" />
+        </div>
+        <div class="actions">
+          <button class="delete" @click="removeTodo(todo)">delete</button>
+        </div>
+      </template>
+    </Todos>
+    <Posts v-else :initialUsers="users" :initialPosts="posts" @update:posts="posts = $event">
+      <template #post-item="{ post }">
+        <h3><b>{{ post.title }}</b></h3>
+        <p>{{ post.body }}</p>
+      </template>
+    </Posts>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import Todos from './components/Todos.vue'
-import Posts from './components/Posts.vue'
+import { ref } from 'vue';
+import Todos from './components/Todos.vue';
+import Posts from './components/Posts.vue';
 
 const showingTodos = ref(true);
+const users = ref([]);
+const posts = ref([]);
+const todos = ref([]);
 
 const showTodos = () => {
   showingTodos.value = true;
