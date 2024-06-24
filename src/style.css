@@ -8,9 +8,6 @@
 	--danger: #ff5b57;
 
 	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-
-	--malam-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
-	--siang-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
 }
 
 * {
@@ -39,12 +36,12 @@ body {
 
 .cont {
 	position: relative;
-	top:15vh;
+	top: 15vh;
 	background-color: rgb(245, 245, 245);
 	width: 70%;
-  margin-left: 200px;
-  margin-bottom: 1.5rem;
-  border-radius: 1rem;
+	margin-left: 200px;
+	margin-bottom: 1.5rem;
+	border-radius: 1rem;
 }
 
 .showhide {
@@ -113,75 +110,6 @@ h4 {
 	margin-bottom: 1.5rem;
 }
 
-.create-todo .options {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 1rem;
-	margin-bottom: 1.5rem;
-}
-
-.create-todo .options label {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 1.5rem;
-	background-color: #FFF;
-	border-radius: 0.5rem;
-	box-shadow: var(--shadow);
-	cursor: pointer;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-	display: none;
-}
-
-.bubble {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 20px;
-	height: 20px;
-	border-radius: 100%;
-	border: px solid var(--malam);
-	box-shadow: var(--malam-glow);
-}
-
-.bubble.siang {
-	border-color: var(--siang);
-	box-shadow: var(--siang-glow);
-}
-
-.bubble::after {
-	content: "";
-	display: block;
-	opacity: 100;
-	width: 0px;
-	height: 0px;
-	background-color: var(--malam);
-	box-shadow: var(--malam-glow);
-	border-radius: 100%;
-	transition: 0.2s ease-in-out;
-}
-
-.bubble.siang::after {
-	background-color: var(--siang);
-	box-shadow: var(--siang-glow);
-}
-
-input:checked ~ .bubble::after {
-	width: 10px;
-	height: 10px;
-	opacity: 100;
-}
-
-.create-todo .options label div {
-	color: var(--dark);
-	font-size: 1.125rem;
-	margin-top: 1rem;
-}
-
 .create-todo input[type="submit"] {
 	display: block;
 	width: 100%;
@@ -190,7 +118,6 @@ input:checked ~ .bubble::after {
 	color: #FFF;
 	background-color: slategrey;
 	border-radius: 0.5rem;
-	box-shadow: var(--personal-glow);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
@@ -201,7 +128,7 @@ input:checked ~ .bubble::after {
 
 .todo-list .list {
 	margin: 1rem 0;
-} 
+}
 
 .todo-list .todo-item {
 	display: flex;
@@ -259,4 +186,3 @@ input:checked ~ .bubble::after {
 	text-decoration: line-through;
 	color: var(--grey);
 }
-
